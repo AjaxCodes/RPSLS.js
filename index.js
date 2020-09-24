@@ -72,7 +72,7 @@ class Game{
 
     runGame(){
         this.gameSetup();
-        this.ruleSet();
+        this.gameLoop();
         this.createScoring();
         
     }
@@ -81,12 +81,12 @@ class Game{
        let userInput = prompt('The rules are : Each player has a turn. Player 1 goes, then Player 2. Whichever players chosen gesture has a winning value will recieve a point. The first player to score 2 points wins. This is a best out of 3 series Gestures are as follows. Rock. Paper. Scissors. Lizard. Spock. 0: Rock beats Scissors, and Lizard. 1: Paper beats Rock, and Spock. 2: Scissors beats Paper, and Lizard. 3: Lizard beats Spock, and Paper. 4: Spock beats Rock, and Scissors. /////////  press :1 for 2 human players, and press 2: for human v computer');
         switch (userInput){
             case '1':
-               this.playerOne = new Human('aj');
-               this.playerTwo = new Human('douglas');
+               this.playerOne = new Human('Tony');
+               this.playerTwo = new Human('Ezekiel');
             break;
             case '2':
                 this.playerOne = new Human();
-                this.playerTwo = new Computer('douglas');
+                this.playerTwo = new Computer('T-1000');
             break;
             default:
                 this.gameSetup(); // restart function
@@ -94,7 +94,7 @@ class Game{
         }
     }
 
-    ruleSet(){
+    gameLoop(){
         while (this.playerOne.score < 2 && this.playerTwo.score < 2){
                this.playerOne.selectGesture(this.gesture);
                this.playerTwo.selectGesture(this.gesture);
