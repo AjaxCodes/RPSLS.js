@@ -102,7 +102,7 @@ class Game{
          }            
     }
 
-    createScoring(){
+    displayWinner(){
         if (this.playerOne.score > this.playerTwo.score ){
             console.log('Game Over', 'playerOne WINS!!!');
         }
